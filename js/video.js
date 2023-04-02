@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
 	console.log("Autoplay: off");
 	video.loop = false;
 	console.log("Video Loop: off");
+	console.log("Starting volume is", video.volume);
 });
 
 document.getElementById("play").addEventListener("click", function() {
@@ -16,6 +17,7 @@ document.getElementById("play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
 	var val = document.getElementById("slider").value;
+	video.volume = val/100;
 	val += "%";
 	volInf.innerHTML += val;
 });
@@ -63,9 +65,10 @@ document.querySelector("#slider").addEventListener("input", function() {
 	var volInf = document.getElementById("volume");
 	volInf.innerHTML = volText;
 	var val = document.getElementById("slider").value;
+	video.volume = val/100;
 	val = val += "%";
 	volInf.innerHTML += val;
-	console.log("Volume is", val);
+	console.log("Volume is", video.volume);
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {

@@ -16,6 +16,7 @@ document.getElementById("play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
 	volInf.innerHTML += document.getElementById("slider").value;
+	volInf.innerHTML += "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -62,7 +63,7 @@ document.querySelector("#slider").addEventListener("input", function() {
 	volInf.innerHTML = volText;
 	var val = document.getElementById("slider").value;
 	volInf.innerHTML += val;
-	console.log("Volume is ", val);
+	console.log("Volume is ", val, "%");
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
